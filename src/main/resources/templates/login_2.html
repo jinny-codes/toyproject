@@ -1,20 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+
 <head>
     <meta charset="UTF-8">
+    <style>
+        body {
+            background-image:url(/Users/jinny/Downloads/jene-stephaniuk-wotMaQFmlBM-unsplash.jpg); 
+            background-size: cover;
+        }
+    
+        .center {
+            position: absolute;
+            background-color: white;
+            border-radius: 25px;
+            padding: 100px 50px 100px 50px;
+            width: 60%;
+            height: 50%;
+            margin: 90px 230px;
+    
+        }
+        td {
+            height: 100%;
+        }
+        .icon {
+            padding-left: 60px;
+            padding-right: 50px;
+            padding-top: 20px;
+        }
+        .inputs_margin {
+            margin-top: 10px; 
+            margin-bottom: 10px;
+        }
+        .margins_td2 {
+            padding-left: 60px;
+        }
+        input {
+            border-radius: 25px;
+            border: none;
+            background-color: #dddddd;
+            color: #7E7e7e;
+            padding: 15px;
+            padding-left: 25px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            width: 230px;
+            margin: 5px;
+        }
+        button {
+            background: #3cd184;
+            border: none;
+            color: white;
+            border-radius: 25px;
+            padding: 15px;
+            width: 270px;
+            font-size: 15px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
     <title>login</title>
 </head>
 <body>
-<h1>Login</h1> <hr>
-<img src="/img/info.jpeg" />
+<div class="center">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <img class ="icon" width ="300px" alt ="icon" src="https://cdn.jim-nielsen.com/watchos/512/mint-2015-06-02.png">
+                </td>
+                <td style="text-align: center;" class="margins_td2">
+    <h1 style="text-align: center; font-family: Lato; letter-spacing: 0.1em;font-size: 30px;">Login</h1> 
 
 <form action="/login" method="POST">
     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-    email : <input type="text" name="username"> <br>
-    password : <input type="password" name="password"> <br>
-    <button type="submit">Login</button>
+    <div style="margin-bottom: 15px;">
+    <input placeholder="Email"class="inputs_margin" type="text" name="username"> <br>
+    <input placeholder="Password" class="inputs_margin" type="password" name="password"> <br>
+    </div>
+    <button class="inputs_margin" type="submit">LOGIN</button>
 </form> <br>
-
-<a href="/signup">Go to join! →</a>
+<div style="padding-top: 100px">
+<a href="/signup" style="color:#656565; font-family: Lato; text-decoration: none">Create your Account →</a>
+</div>
+</td>
+            </tr>
+</tbody>
+    </table>
+</div>
 </body>
 </html>
