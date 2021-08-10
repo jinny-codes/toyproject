@@ -8,3 +8,8 @@
 ## 프론트엔드 위치 
 - css, js, font... : resources/static
 - html : resources/templates
+
+## 페이지
+- 로그인 : login.html
+- 회원가입 : signup.html
+- 로그인 성공 페이지 : mainl.html
