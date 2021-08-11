@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+
 <head>
 	<meta charset="utf-8">
 	<title>Form-v7 by Colorlib</title>
@@ -12,40 +14,133 @@
 	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
 	<!-- Main Style Css -->
     <link rel="stylesheet" href="css/style.css"/>
+	<style>
+		body {
+            background-image:url(https://images.unsplash.com/photo-1612153018787-4899c6e056d7?ixid=MXwxMzcxOTN8MHwxfHNlYXJjaHwxMHx8c2hhbXJvY2tzfGVufDB8fHw&ixlib=rb-1.2.1&fm=jpg&w=3024&h=4032&fit=max); 
+            background-size: cover;
+        }
+    
+        .center {
+            position: absolute;
+            background-color: white;
+            border-radius: 25px;
+            padding: 55px 50px;
+            width: 60%;
+            height: 60%;
+            margin: 100px 220px;
+    
+        }
+        td {
+            height: 100%;
+        }
+        .icon {
+            padding-left: 60px;
+            padding-right: 50px;
+            padding-top: 20px;
+        }
+        .inputs_margin {
+            margin-top: 10px; 
+            margin-bottom: 10px;
+        }
+        .margins_td2 {
+            padding-left: 60px;
+        }
+        .type {
+            border-radius: 25px;
+            border: none;
+            background-color: #dddddd;
+            color: #7E7e7e;
+            padding: 10px;
+            padding-left: 25px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            width: 230px;
+            margin: 5px;
+        }
+		label {
+        	display: inline-block;
+        	width: 110px;
+      	}
+        button:hover {
+            background:#3Eb489;
+        }
+		label {
+			font-family: sans-serif;
+		}
+		p {
+			font-family: Lato;
+			font-size: 30px;
+		}
+		input {
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			background: #3cd184;
+            border: none;
+            color: white;
+            border-radius: 25px;
+            padding: 10px;
+            width: 150px;
+            font-size: 17px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+			
+		}
+		.register {
+			margin-top: 30px;
+			
+		}
+		.register:hover {
+			background: #3Eb489
+		}
+
+		h4 {
+			text-decoration: none;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-size: 13px;
+		}
+	</style>
 </head>
 <body class="form-v7">
 	<div class="page-content">
-		<div class="form-v7-content">
+		<div class="form-v7-content center">
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<img class ="icon" width ="300px" alt ="icon" src="https://cdn.jim-nielsen.com/watchos/512/mint-2015-06-02.png">
+						</td>
+						<td>
 			<div class="form-left">
-				<img src="images/form-v7.jpg" alt="form">
 				<p class="text-1">Sign Up</p>
 			</div>
 			<form class="form-detail" th:action="@{/user}" method="POST">
 				<div class="form-row">
 					<label for="username">NAME</label>
-					<input type="text" name="name" id="name" class="input-text">
+					<input type="text" name="name" id="name" class="input-text type">
 				</div>
 				<div class="form-row">
 					<label for="your_email">EMAIL</label>
-					<input type="text" name="email" id="email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					<input type="text" name="email" id="email" class="input-text type" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
 				</div>
 				<div class="form-row">
 					<label for="password">PASSWORD</label>
-					<input type="password" name="password" id="password" class="input-text" required>
+					<input type="password" name="password" id="password" class="input-text type" required>
 				</div>
 				<div class="form-row">
 					<label for="username">AUTHORITY</label>
-					<input type="text" name="auth" id="auth" class="input-text">
+					<input type="text" name="auth" id="auth" class="input-text type">
 				</div>
 				<div class="form-row">
 					<label for="username">BALANCE</label>
-					<input type="text" name="balance" id="balance" class="input-text">
+					<input type="text" name="balance" id="balance" class="input-text type">
 				</div>
 				<div class="form-row-last">
 					<input type="submit" name="register" class="register" value="Register">
-					<p>Or<a href="http://localhost:8080/login">Sign in</a></p>
+					<h4>Or <a href="http://localhost:8080/login">Sign in</a></h4>
 				</div>
 			</form>
+			</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
