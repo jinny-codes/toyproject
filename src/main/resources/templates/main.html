@@ -2,19 +2,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
       xmlns:th="http://www.w3.org/1999/xhtml">
+    
 <head>
     <title>main</title>
+    <style>
+        body {
+            background-image:url(https://images.unsplash.com/photo-1612153018787-4899c6e056d7?ixid=MXwxMzcxOTN8MHwxfHNlYXJjaHwxMHx8c2hhbXJvY2tzfGVufDB8fHw&ixlib=rb-1.2.1&fm=jpg&w=3024&h=4032&fit=max); 
+            background-size: cover;
+        }
+        .center {
+            position: absolute;
+            background-color: white;
+            border-radius: 25px;
+            padding: 100px 50px;
+            width: 60%;
+            height: 50%;
+            margin: 90px 230px;
+    
+        }
+        h2 {
+            font-family: sans-serif;
+        }
+        form input {
+            background-color: #3CBC8D;
+            color: white;
+            border-radius: 25px;
+            border: none;
+            padding: 15px;
+            width: 150px;
+            font-family: sans-serif;
+        }
+        form input:hover {
+            background: #3Eb489
+        }
+        p {
+            font-family: sans-serif;
+        }
+        form {
+            position: absolute;
+            bottom: 150px;
+            right: 150px;
+        }
+        img {
+            float: left;
+            padding: 50px 100px;
+        }
+    </style>
 </head>
 <body>
-<h2 th:inline="text"> 안녕하세요 [[${name}]]님, </h2>
+    <div class="center">
+        <img src="https://www.pngkit.com/png/full/24-249639_contact-person-icon-png-circle.png" width="100px">
+<h2 th:inline="text" > 안녕하세요 [[${name}]]님, </h2>
 <h2> 현재 잔고는 [[${balance}]]원 입니다. </h2>
-이메일 : <span sec:authentication="name"></span> <br>
-등급 : <span sec:authentication="authorities"></span> <br>
+<p style="margin-bottom: -10px">이메일 : </p><span sec:authentication="name"></span> <br>
+<p>등급 : </p><span sec:authentication="authorities"></span> <br>
 
 <form id="logout" action="/logout" method="POST">
     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     <input type="submit" value="로그아웃"/>
 </form>
-
+</div>
 </body>
 </html>
